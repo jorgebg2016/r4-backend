@@ -7,25 +7,42 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
     "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "migrate": "npx sequelize-cli db:migrate",
+    "seed": "npx sequelize-cli db:seed:all",
+    "apply-seeders": "node -r dotenv-flow/config ./node_modules/.bin/sequelize db:seed:all",
+    "revert-seeders": "node -r dotenv-flow/config ./node_modules/.bin/sequelize db:seed:undo:all"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-jwt": "^7.7.7",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^3.0.0",
     "mysql2": "^3.0.0-rc.1",
-    "sequelize": "^6.25.4",
-    "sequelize-cli-typescript": "^3.2.0-c"
+    "sequelize": "^6.26.0",
+    "sequelize-typescript": "^2.1.5",
+    "uninstall": "^0.0.0"
   },
   "devDependencies": {
+    "@babel/register": "^7.18.9",
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.13",
     "@types/express": "^4.17.14",
+    "@types/express-jwt": "^7.4.2",
+    "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "^18.11.9",
     "@types/sequelize": "^4.28.14",
+    "babel-plugin-module-resolver": "^4.1.0",
     "concurrently": "^7.5.0",
     "nodemon": "^2.0.20",
     "sequelize-cli": "^6.5.2",
+    "sequelize-cli-typescript": "^3.2.0-c",
     "typescript": "^4.8.4"
   }
 }

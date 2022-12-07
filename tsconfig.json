@@ -9,10 +9,10 @@
     "outDir": "./dist"
   },
   "include": [
-    "./App/**/*.ts",
-    "./App/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.js",
     "./sequelizerc"
-, "App/database/config.js"  ],
+, "src/database/config.js"  ],
   "exclude": [
     "node_modules",
     "dist"
